@@ -1,0 +1,32 @@
+{
+  "name": "tommc/php-generics",
+  "description": "Duty Calculation Package",
+  "type": "project",
+  "config": {
+    "platform": {
+      "php": "7.4.11"
+    },
+    "discard-changes": true,
+    "sort-packages": true
+  },
+  "require": {},
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5",
+    "phpstan/phpstan": "^0.12.48"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "App\\Test\\": "test/"
+    }
+  },
+  "scripts": {
+    "build": ["@test", "@phpcs"],
+    "phpcs": "phpcs src",
+    "phpstan": "./vendor/bin/phpstan analyze src/ --level=7"
+  }
+}
